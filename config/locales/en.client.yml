@@ -1,0 +1,8 @@
+
+en:
+  js:
+    login:
+      oidc:
+        name: "Office365"
+        title: "with Office365"
+        message: "Authenticating with Office365"
