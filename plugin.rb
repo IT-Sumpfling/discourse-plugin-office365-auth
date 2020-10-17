@@ -60,7 +60,7 @@ class Office365Authenticator < ::Auth::OAuth2Authenticator
 end
 
 auth_provider title: 'with Office365',
-              enabled_setting: "office365_enabled",
+#              enabled_setting: "office365_enabled",
               message: 'Log in via Office365',
               frame_width: 920,
               frame_height: 800,
