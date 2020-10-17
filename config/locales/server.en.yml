@@ -5,3 +5,6 @@ en:
     office365_secret: 'Office365 Secret Password'
     office365_allow_association_change: 'Allow users to disconnect and reconnect their Discourse accounts from the Office365 provider'
     office365_overrides_email: 'On every login, override the users email using the Office365 value'
+  login:
+    microsoft_office365:
+      name: 'Office365'
