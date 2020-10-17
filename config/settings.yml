@@ -8,3 +8,9 @@ plugins:
   office365_secret:
     client: false
     default: ''
+  office365_allow_association_change:
+    client: false
+    default: false
+  office365_overrides_email:
+    client: false
+    default: false
