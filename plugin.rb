@@ -18,20 +18,32 @@ class Office365Authenticator < ::Auth::OAuth2Authenticator
     'microsoft_office365'
   end
 
-  def after_authenticate(auth_token)
-    result = super
-
-    if result.user && result.email && (result.user.email != result.email)
-      begin
-        result.user.primary_email.update!(email: result.email)
-      rescue
-        used_by = User.find_by_email(result.email)&.username
-        Rails.loger.warn("FAILED to update email for #{user.username} to #{result.email} cause it is in use by #{used_by}")
-      end
-    end
-
-    result
+  def can_revoke?
+    SiteSetting.office365_allow_association_change
   end
+
+  def can_connect_existing_user?
+    SiteSetting.office365_allow_association_change
+  end
+
+  def always_update_user_email?
+    SiteSetting.office365_overrides_email
+  end
+
+#  def after_authenticate(auth_token)
+#    result = super
+#
+#    if result.user && result.email && (result.user.email != result.email)
+#      begin
+#        result.user.primary_email.update!(email: result.email)
+#      rescue
+#        used_by = User.find_by_email(result.email)&.username
+#        Rails.loger.warn("FAILED to update email for #{user.username} to #{result.email} cause it is in use by #{used_by}")
+#      end
+#    end
+#
+#    result
+#  end
 
   def register_middleware(omniauth)
     omniauth.provider :microsoft_office365,
