@@ -30,8 +30,8 @@ class Office365Authenticator < ::Auth::OAuth2Authenticator
     SiteSetting.office365_overrides_email
   end
 
-  def after_authenticate(auth_token)
-    result = super
+#  def after_authenticate(auth_token)
+#    result = super
 #
 #    if result.user && result.email && (result.user.email != result.email)
 #      begin
@@ -42,8 +42,8 @@ class Office365Authenticator < ::Auth::OAuth2Authenticator
 #      end
 #    end
 #
-    result
-  end
+#    result
+#  end
 
   def register_middleware(omniauth)
     omniauth.provider :microsoft_office365,
