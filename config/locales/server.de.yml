@@ -1,0 +1,10 @@
+de:
+  site_settings:
+    office365_enabled: 'Erlaube Benutzern die Anmeldung mit Office365?'
+    office365_client_id: 'Office365 App ID/Client Id (benötigt? gehe zu <a href="https://apps.dev.microsoft.com/#/appList">https://apps.dev.microsoft.com/#/appList</a>)'
+    office365_secret: 'Office365 Client Secret'
+    office365_allow_association_change: 'Erlaube Benutzern, Ihren Account mit dem Office365 Provider zu verbinden und zu trennen'
+    office365_overrides_email: 'Die Benutzer-Email bei jedem Login mit dem Wert von O365 überschreiben'
+  login:
+    microsoft_office365:
+      name: 'Office365'
