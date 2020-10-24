@@ -1,0 +1,7 @@
+de:
+  js:
+    login:
+      microsoft_office365:
+        name: "Office365"
+        title: "mit Office365"
+        message: "Anmelden mit Office365"
